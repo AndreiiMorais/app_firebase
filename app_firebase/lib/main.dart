@@ -1,9 +1,19 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
-
-  
+//codigo para criar uma coleçao e adicionar um valor no firebase
+  //somente para testar se esta funcionando.
+  FirebaseFirestore.instance
+      .collection("produtos") //coleçao é a tabela do noSQL
+      .doc("001") //documento é o registro ou coluna para o noSQL
+      .set({
+    "nome": "caneta bic",
+    "preco": 4.98,
+    "ativo": true,
+  }); //aqui sao os dados da coluna
+  //os dados sao adicionados como mapa com {"variavel":"dado",}
 }
 
 class MyApp extends StatelessWidget {
